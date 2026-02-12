@@ -39,7 +39,8 @@ The codebase is organized to separate statistical models from execution scripts:
 │   ├── SSM_Full_Dynamic.stan  # Full Model: STIRPAT (Pop, GDP, Tech) + Dynamic Trend
 │   └── SSM_Null_Dynamic.stan  # Null Model: Second-order Random Walk (Pure Inertia)
 ├── data/
-│   └── sample_structure.csv   # Template for data formatting
+|   ├── tableA4.csv
+│   └── tableA5.csv 
 └── README.md
 
 ```
