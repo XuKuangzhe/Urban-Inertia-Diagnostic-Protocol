@@ -7,7 +7,7 @@
 
 > **A Bayesian framework for diagnosing structural inertia and intervention efficacy in data-scarce urban energy systems.**
 
-This repository hosts the source code and diagnostic protocols for the research paper: **"A Bayesian Framework to Diagnose Structural Inertia in Data-Scarce Megacities: Proof-of-Concept in Beijing"**.
+This repository hosts the source code and diagnostic protocols for the research paper: **"A Bayesian Structural Time Series Protocol for Diagnosing Urban Carbon Lock-in under Severe Data Scarcity"**.
 
 ---
 
