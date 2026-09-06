@@ -97,6 +97,6 @@ While this repository hosts the diagnostic algorithms, the full replication data
 ## 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details. This ensures the protocol remains open and adaptable for the global research community.
 
-Contact: Kuangzhe Xu Cyberspace Security University of China 
+Contact: Kuangzhe Xu(xu@csuc.edu.cn) / Cyberspace Security University of China 
 
 
