@@ -101,7 +101,7 @@ Open R_code/Main_Analysis.R and point the data loader to your local file:
 city_data <- read.csv("path/to/your_city_data.csv")
 
 # Run the Bayesian sampler
-fit <- stan(file = "Stan Model/SSM_Null_Dynamic.stan", data = city_data, ...)
+fit <- stan(file = "Stan Model/XXX.stan", data = city_data, ...)
 ```
 
 The script will output posterior distributions for structural inertia ($\sigma_{\mu}$) and the impact magnitude of exogenous shocks ($\beta_{shock}$).
