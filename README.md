@@ -31,16 +31,33 @@ The codebase is organized to separate statistical models from execution scripts:
 
 ```bash
 .
+├── Stan/
+│   ├── SSM_Full_SORW_v2.stan            # Primary: Full SORW (with detrended covariates & LASSO)
+│   ├── SSM_Reduced_SORW_v2.stan         # Primary: Reduced SORW (second-order trend)
+│   ├── SSM_Reduced_FORW_v2.stan         # Primary: Reduced FORW (first-order no-trend)
+│   ├── SSM_Reduced_DriftFORW_v1.stan    # Primary: Reduced DriftFORW (constant linear drift)
+│   ├── SSM_Reduced_LLT_v1.stan          # Benchmark: Local Linear Trend (for LFO evaluation)
+│   ├── SSM_Full_SORW_v3.stan            # Exact-LOO: Full SORW with use_obs likelihood mask
+│   ├── SSM_Reduced_SORW_v3.stan         # Exact-LOO: Reduced SORW with use_obs mask
+│   ├── SSM_Reduced_FORW_v3.stan         # Exact-LOO: Reduced FORW with use_obs mask
+│   └── SSM_Reduced_DriftFORW_v3.stan    # Exact-LOO: Reduced DriftFORW with use_obs mask
 ├── R_code/
-│   ├── Main_Analysis.R        # Primary pipeline: Data loading, Model fitting (Stan), and LOO-CV
-│   ├── SI_Analysis.R          # Supplementary analysis (Sensitivity tests, alternative priors)
-│   └── HDI.R                  # Helper function for Highest Density Intervals
-├── Stan Model/
-│   ├── SSM_Full_Dynamic.stan  # Full Model: STIRPAT (Pop, GDP, Tech) + Dynamic Trend
-│   └── SSM_Null_Dynamic.stan  # Null Model: Second-order Random Walk (Pure Inertia)
+│   ├── 00_setup.R                       # Global configs, paths, helper functions, model compilation
+│   ├── 01_data_audit.R                  # Data integrity checks, LPG/Other break audit, VIF detrending
+│   ├── 02_primary_models.R              # Model fitting (4 models × 5 carriers), MCMC checks, PSIS-LOO
+│   ├── 03_identification_diagnostics.R  # State-innovation share (R_pers), posterior coefficients
+│   ├── 04_forecasting.R                 # Analytical 2035 P_exc, target sensitivity, MC validation
+│   ├── 05_validation.R                  # 2D numerical grid posterior solver & 1,600 DGP simulations
+│   ├── 06_intervention.R                # Conditional policy scenarios (Level shock + Variance damping)
+│   ├── 07_benchmark_LFO.R               # 4-way dynamic benchmark & forward-chaining LFO evaluation
+│   ├── 08_exact_LOO.R                   # Exact-LOO refits (k > 0.7) and hybrid ELPD generation
+│   ├── 09_sensitivity_prior.R           # Prior scale sensitivity (c = 0.5, 1, 2)
+│   ├── 09B_sensitivity_LASSO.R          # Laplace shrinkage scale sensitivity (mean = 0.25, 1, 2)
+│   ├── 10_sensitivity_COVID.R           # COVID-19 coding sensitivity (Primary, Pulse, Pulse-decay)
+│   └── 99_tables_figures.R              # Compiles and exports all main-text and SI figures/tables
 ├── data/
-|   ├── tableA4.csv
-│   └── tableA5.csv 
+│   ├── tableA4.csv                      # Macroeconomic STIRPAT drivers (2010–2023)
+│   └── tableA5.csv                      # Sectoral final energy consumption (2010–2023)
 └── README.md
 
 ```
