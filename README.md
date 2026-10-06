@@ -1,13 +1,13 @@
-# Urban Structural Inertia Diagnostic Protocol (USIDP)
+# Short Urban Energy BSTS (SUEB)
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![R](https://img.shields.io/badge/Made%20with-R-blue.svg)](https://www.r-project.org/)
 [![Stan](https://img.shields.io/badge/Powered%20by-Stan-red.svg)](https://mc-stan.org/)
 
-> **A Bayesian framework for diagnosing structural inertia and intervention efficacy in data-scarce urban energy systems.**
+> **A Bayesian workflow for diagnosing structural inertia and intervention efficacy in data-scarce urban energy systems.**
 
-This repository hosts the source code and diagnostic protocols for the research paper: **"A Bayesian Structural Time Series Protocol for Diagnosing Urban Carbon Lock-in under Severe Data Scarcity"**.
+This repository hosts the source code and diagnostic protocols for the research paper: **"Assessing Temporal Persistence and Long-Horizon Predictive Uncertainty in Short Urban Energy Series: A Bayesian Structural Time-Series Framework"**.
 
 ---
 
